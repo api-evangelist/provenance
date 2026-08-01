@@ -1,0 +1,56 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/provenance-io/provenance/tree/main/proto/provenance
+note: >-
+  Provenance publishes 79 first-party protobuf files (plus vendored Cosmos SDK / IBC
+  third_party protos). Saved verbatim here are the query + tx service definitions for
+  the six flagship modules. The full set lives in the provenance-io/provenance repo.
+protos:
+- file: provenance-marker-query.proto
+  module: marker
+  service: Query
+  path: proto/provenance/marker/v1/query.proto
+- file: provenance-marker-tx.proto
+  module: marker
+  service: Msg
+  path: proto/provenance/marker/v1/tx.proto
+- file: provenance-metadata-query.proto
+  module: metadata
+  service: Query
+  path: proto/provenance/metadata/v1/query.proto
+- file: provenance-metadata-tx.proto
+  module: metadata
+  service: Msg
+  path: proto/provenance/metadata/v1/tx.proto
+- file: provenance-exchange-query.proto
+  module: exchange
+  service: Query
+  path: proto/provenance/exchange/v1/query.proto
+- file: provenance-exchange-tx.proto
+  module: exchange
+  service: Msg
+  path: proto/provenance/exchange/v1/tx.proto
+- file: provenance-name-query.proto
+  module: name
+  service: Query
+  path: proto/provenance/name/v1/query.proto
+- file: provenance-name-tx.proto
+  module: name
+  service: Msg
+  path: proto/provenance/name/v1/tx.proto
+- file: provenance-attribute-query.proto
+  module: attribute
+  service: Query
+  path: proto/provenance/attribute/v1/query.proto
+- file: provenance-attribute-tx.proto
+  module: attribute
+  service: Msg
+  path: proto/provenance/attribute/v1/tx.proto
+- file: provenance-ledger-query.proto
+  module: ledger
+  service: Query
+  path: proto/provenance/ledger/v1/query.proto
+- file: provenance-ledger-tx.proto
+  module: ledger
+  service: Msg
+  path: proto/provenance/ledger/v1/tx.proto

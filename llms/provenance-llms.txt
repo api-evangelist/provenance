@@ -1,0 +1,37 @@
+# Provenance Blockchain
+
+> Provenance Blockchain is a public, proof-of-stake blockchain purpose-built for financial services and the tokenization of real-world assets. Built on the Cosmos SDK with CometBFT consensus, it exposes first-party modules for markers (tokens), a metadata asset registry (p8e), an on-chain exchange, ledgers, names, and attributes. Applications integrate over a public Cosmos REST (LCD / gRPC-gateway) API, gRPC, and Tendermint RPC, plus first-party Go, Kotlin, Rust/CosmWasm, and JavaScript SDKs. HASH is the native staking and gas token.
+
+## APIs
+
+- [Provenance Blockchain API (REST/LCD)](https://api.provenance.io): Public Cosmos gRPC-gateway REST endpoint for querying and broadcasting to all modules.
+- [Tendermint RPC](https://rpc.provenance.io): CometBFT RPC endpoint.
+- [Developer docs](https://docs.provenance.io/): Learn / Build / SDK documentation portal.
+
+## Specs (protobuf)
+
+- [Marker query proto](grpc/provenance-marker-query.proto): Token/marker queries.
+- [Marker tx proto](grpc/provenance-marker-tx.proto): Marker transactions.
+- [Metadata query proto](grpc/provenance-metadata-query.proto): Asset registry (scopes/sessions/records) queries.
+- [Metadata tx proto](grpc/provenance-metadata-tx.proto): Metadata transactions.
+- [Exchange query proto](grpc/provenance-exchange-query.proto): On-chain exchange queries.
+- [Exchange tx proto](grpc/provenance-exchange-tx.proto): Exchange transactions.
+- [Name query proto](grpc/provenance-name-query.proto): Name resolution.
+- [Attribute query proto](grpc/provenance-attribute-query.proto): Account attributes.
+- [Ledger query proto](grpc/provenance-ledger-query.proto): Financial ledger queries.
+- [Full protobuf set](https://github.com/provenance-io/provenance/tree/main/proto/provenance): All 79 first-party module protos.
+
+## SDKs & packages
+
+- [Go module](https://pkg.go.dev/github.com/provenance-io/provenance)
+- [Kotlin gRPC client](https://search.maven.org/artifact/io.provenance.client/pb-grpc-client-kotlin)
+- [provwasm-std (Rust/CosmWasm)](https://crates.io/crates/provwasm-std)
+- [walletconnect-js](https://www.npmjs.com/package/@provenanceio/walletconnect-js)
+
+## Docs
+
+- [Quickstart](https://docs.provenance.io/build/quickstart)
+- [SDK guide](https://docs.provenance.io/build/sdk)
+- [GitHub organization](https://github.com/provenance-io)
+- [Block explorer](https://explorer.provenance.io)
+- [Changelog / releases](https://github.com/provenance-io/provenance/releases)

@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: derived
+source: >-
+  Derived from the provenance-io/provenance repository (Cosmos SDK app), the saved
+  protobuf definitions (grpc/*.proto), and the provenance-io GitHub org (ibc-go,
+  cosmos-sdk forks, cometbft usage).
+standards:
+- id: cosmos-sdk
+  conforms: true
+  evidence: Application built on the Cosmos SDK app framework; provenance modules follow Cosmos module conventions.
+- id: cometbft-tendermint
+  conforms: true
+  evidence: Proof-of-stake BFT consensus via CometBFT (Tendermint); Tendermint RPC exposed at rpc.provenance.io.
+- id: protobuf
+  conforms: true
+  evidence: All module state, queries, and transactions defined in protobuf (79 first-party .proto files).
+- id: grpc
+  conforms: true
+  evidence: Query and Msg services defined as gRPC services in the module protos.
+- id: grpc-gateway-rest
+  conforms: true
+  evidence: Public REST (LCD) gateway at api.provenance.io generated from the gRPC services.
+- id: ibc
+  conforms: true
+  evidence: Inter-Blockchain Communication via ibc-go; provenance ibchooks and ibcratelimit modules present.
+- id: cosmwasm
+  conforms: true
+  evidence: Smart-contract support via wasmd/CosmWasm with provwasm bindings to custom modules.
+- id: oauth2
+  conforms: false
+  evidence: Public chain; read queries are unauthenticated, transactions are cryptographically signed (secp256k1), not OAuth.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors follow Cosmos SDK / gRPC status codes, not application/problem+json.
+- id: openapi
+  conforms: false
+  evidence: API surface is defined in protobuf/gRPC, not OpenAPI.

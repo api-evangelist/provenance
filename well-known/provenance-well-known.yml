@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: live HTTP probes of provenance.io, api.provenance.io, docs.provenance.io
+note: >-
+  No /.well-known discovery documents or /llms.txt are published on any host. The public
+  Cosmos LCD gateway (api.provenance.io) returns HTTP 501 (not implemented) for these paths;
+  the marketing and docs hosts return 404. Recorded as an honest negative result.
+hosts:
+- host: https://provenance.io
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://api.provenance.io
+  documents:
+  - {path: /.well-known/security.txt, status: 501}
+  - {path: /.well-known/openid-configuration, status: 501}
+  - {path: /.well-known/oauth-authorization-server, status: 501}
+  - {path: /.well-known/api-catalog, status: 501}
+  - {path: /.well-known/ai-plugin.json, status: 501}
+- host: https://docs.provenance.io
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}

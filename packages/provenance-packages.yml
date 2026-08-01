@@ -1,0 +1,45 @@
+generated: '2026-07-20'
+method: searched
+source: |
+  Registry probes (npm, Maven Central, crates.io, pkg.go.dev) + provenance-io GitHub org.
+packages:
+- language: go
+  registry: go-modules
+  name: github.com/provenance-io/provenance
+  url: https://pkg.go.dev/github.com/provenance-io/provenance
+  install: go get github.com/provenance-io/provenance
+  official: true
+  notes: Core blockchain node + module protobuf Go types.
+- language: kotlin
+  registry: maven-central
+  name: io.provenance.client:pb-grpc-client-kotlin
+  url: https://search.maven.org/artifact/io.provenance.client/pb-grpc-client-kotlin
+  install: 'implementation("io.provenance.client:pb-grpc-client-kotlin:<version>")'
+  official: true
+  notes: gRPC client for the Provenance Blockchain (repo provenance-io/pb-grpc-client-kotlin).
+- language: kotlin
+  registry: maven-central
+  name: io.provenance.client:pb-grpc-client-coroutines-kotlin
+  url: https://search.maven.org/artifact/io.provenance.client/pb-grpc-client-coroutines-kotlin
+  install: 'implementation("io.provenance.client:pb-grpc-client-coroutines-kotlin:<version>")'
+  official: true
+- language: rust
+  registry: crates.io
+  name: provwasm-std
+  url: https://crates.io/crates/provwasm-std
+  install: cargo add provwasm-std
+  official: true
+  notes: Rust bindings for CosmWasm contracts to call Provenance custom modules (repo provenance-io/provwasm).
+- language: javascript
+  registry: npm
+  name: '@provenanceio/walletconnect-js'
+  url: https://www.npmjs.com/package/@provenanceio/walletconnect-js
+  install: npm install @provenanceio/walletconnect-js
+  official: true
+  notes: Build Provenance dApps using WalletConnect-compliant wallets.
+- language: javascript
+  registry: npm
+  name: '@provenanceio/wallet-lib'
+  url: https://www.npmjs.com/package/@provenanceio/wallet-lib
+  install: npm install @provenanceio/wallet-lib
+  official: true

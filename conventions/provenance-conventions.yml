@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  Cosmos SDK gRPC/REST conventions as implemented by Provenance (grpc/*.proto,
+  api.provenance.io LCD gateway) and documented at docs.provenance.io.
+authentication:
+  read: none (public, unauthenticated queries against the REST/gRPC/RPC endpoints)
+  write: transactions signed with secp256k1 account keys, broadcast to the chain
+  see: authentication/provenance-authentication.yml
+pagination:
+  style: cursor+offset (Cosmos page.request)
+  request_params: [pagination.key, pagination.offset, pagination.limit, pagination.count_total, pagination.reverse]
+  response_fields: [pagination.next_key, pagination.total]
+  note: Standard cosmos.base.query.v1beta1.PageRequest / PageResponse on list queries.
+idempotency:
+  http_header: null
+  supported: false
+  note: >-
+    No HTTP Idempotency-Key mechanism. Transaction-level idempotency is inherent to the
+    chain: each transaction carries an account sequence (nonce) and is identified by its
+    tx hash, so replays are rejected at consensus. This is a blockchain property, not an
+    API idempotency-key contract.
+versioning:
+  style: uri-path
+  note: Module APIs versioned in the path (e.g. /provenance/marker/v1, /provenance/metadata/v1); v1beta1 for pre-stable.
+error_envelope:
+  style: cosmos-sdk / grpc-status
+  note: >-
+    Query errors surface as gRPC status codes; transaction failures return a Cosmos SDK
+    ABCI response with a numeric code, codespace, and raw_log. Not RFC 9457.
+rate_limiting:
+  note: >-
+    No documented per-key rate limits (public chain). Public LCD/RPC endpoints are operated
+    by validators/infra providers listed in the Cosmos chain-registry, each with its own limits.
+cross_links:
+  errors: null
+  lifecycle: lifecycle/provenance-lifecycle.yml
+  authentication: authentication/provenance-authentication.yml
+  data_model: data-model/provenance-data-model.yml

@@ -1,0 +1,81 @@
+generated: '2026-07-20'
+method: derived
+source: >-
+  Derived from the Provenance module protobuf definitions (grpc/*.proto). Relationships
+  reflect the Cosmos metadata/marker/exchange/ledger module domain models.
+entities:
+- name: Marker
+  module: marker
+  description: A managed token/coin account (fungible or restricted) with access grants and supply.
+- name: Scope
+  module: metadata
+  description: The top-level container for a real-world asset's records (the asset registry unit).
+- name: Session
+  module: metadata
+  description: An execution context under a Scope grouping related records.
+- name: Record
+  module: metadata
+  description: An individual data record (backed by objects in the encrypted object store) within a Session.
+- name: ScopeSpecification
+  module: metadata
+  description: Specification describing the shape/rules for a class of Scopes.
+- name: ContractSpecification
+  module: metadata
+  description: Specification for the contract logic producing records.
+- name: Name
+  module: name
+  description: A hierarchical, resolvable name bound to an address.
+- name: Attribute
+  module: attribute
+  description: A typed name/value attribute attached to an account, keyed by a Name.
+- name: Market
+  module: exchange
+  description: An on-chain exchange venue with its own orders, commitments, and fee config.
+- name: Order
+  module: exchange
+  description: A bid or ask order placed against a Market.
+- name: Payment
+  module: exchange
+  description: A source/target payment settled through the exchange module.
+- name: Ledger
+  module: ledger
+  description: A financial ledger instance of a LedgerClass holding balances and entries.
+- name: LedgerClass
+  module: ledger
+  description: The class/template defining a ledger's entry, status, and bucket types.
+- name: LedgerEntry
+  module: ledger
+  description: An individual accounting entry within a Ledger.
+relationships:
+- from: Scope
+  to: Session
+  type: has_many
+  via: scope_id
+- from: Session
+  to: Record
+  type: has_many
+  via: session_id
+- from: Scope
+  to: ScopeSpecification
+  type: belongs_to
+  via: specification_id
+- from: Attribute
+  to: Name
+  type: belongs_to
+  via: name
+- from: Market
+  to: Order
+  type: has_many
+  via: market_id
+- from: Market
+  to: Payment
+  type: has_many
+  via: market_id
+- from: Ledger
+  to: LedgerClass
+  type: belongs_to
+  via: ledger_class
+- from: Ledger
+  to: LedgerEntry
+  type: has_many
+  via: ledger_id

@@ -1,8 +1,22 @@
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 25
+  pass: local-v1
 aid: provenance
 name: Provenance
-description: Provenance is a company surfaced as a portfolio company of canaan-partners, dcm-ventures
-  and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the
-  enrichment pipeline.
+description: >-
+  Provenance Blockchain is a public, proof-of-stake blockchain purpose-built for
+  financial services and the tokenization of real-world assets. Built on the Cosmos
+  SDK with CometBFT consensus, it exposes its functionality through first-party modules
+  including marker (token/marker issuance), metadata (asset registry and the p8e contract
+  execution environment), exchange (on-chain order book), ledger, name, attribute, hold,
+  trigger, and msgfees/flatfees. Applications integrate over the public Cosmos REST
+  (LCD / gRPC-gateway) API at api.provenance.io, gRPC, and Tendermint RPC at
+  rpc.provenance.io, and via first-party SDKs (Go, Kotlin gRPC client, Rust/CosmWasm
+  provwasm bindings, and JavaScript wallet libraries). HASH is the native staking and
+  gas token. The chain, protobuf data model, and SDKs are open source under the
+  provenance-io GitHub organization.
 url: https://raw.githubusercontent.com/api-evangelist/provenance/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,17 +25,98 @@ x-backed-by:
 - dcm-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://avatars.githubusercontent.com/provenance-io
 tags:
 - Company
-apis: []
+- Blockchain
+- Financial Services
+- Tokenization
+- Real-World Assets
+- Cosmos SDK
+- gRPC
+- Web3
+- DeFi
+- Digital Assets
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Provenance Blockchain API
+  description: >-
+    Public Cosmos SDK REST (LCD / gRPC-gateway), gRPC, and Tendermint RPC interface to
+    the Provenance Blockchain. Query and broadcast transactions against the marker,
+    metadata, exchange, ledger, name, attribute, hold, and trigger modules. Read queries
+    are unauthenticated; state-changing transactions are signed with secp256k1 account keys.
+  humanURL: https://docs.provenance.io/
+  baseURL: https://api.provenance.io
+  tags:
+  - Blockchain
+  - Cosmos SDK
+  - gRPC
+  - Tokenization
+  properties:
+  - type: Protobuf
+    url: grpc/provenance-marker-query.proto
+    name: Marker module protobuf (query)
+  - type: Protobuf
+    url: grpc/provenance-metadata-query.proto
+    name: Metadata module protobuf (query)
+  - type: Protobuf
+    url: grpc/provenance-exchange-query.proto
+    name: Exchange module protobuf (query)
 common:
 - type: Website
   url: https://provenance.io/
+- type: DeveloperPortal
+  url: https://docs.provenance.io/
+- type: Documentation
+  url: https://docs.provenance.io/
+- type: APIReference
+  url: https://docs.provenance.io/build/sdk
+- type: GettingStarted
+  url: https://docs.provenance.io/build/quickstart
+- type: GitHubOrganization
+  url: https://github.com/provenance-io
+- type: Support
+  url: https://docs.provenance.io/community/support
+- type: Protobuf
+  url: grpc/provenance-marker-query.proto
+- type: Packages
+  url: packages/provenance-packages.yml
+- type: SDKs
+  url: packages/provenance-packages.yml
+- type: MCPServer
+  url: mcp/provenance-mcp.yml
+- type: LLMsTxt
+  url: llms/provenance-llms.txt
+- type: Conformance
+  url: conformance/provenance-conformance.yml
+- type: Lifecycle
+  url: lifecycle/provenance-lifecycle.yml
+- type: ChangeLog
+  url: changelog/provenance-changelog.yml
+- type: Conventions
+  url: conventions/provenance-conventions.yml
+- type: DataModel
+  url: data-model/provenance-data-model.yml
+- type: Authentication
+  url: authentication/provenance-authentication.yml
+- type: DomainSecurity
+  url: security/provenance-domain-security.yml

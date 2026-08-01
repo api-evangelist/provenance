@@ -1,0 +1,55 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: >-
+  Derived from the Provenance module Query gRPC services (grpc/*.proto). No official
+  hosted/remote MCP server was found for Provenance Blockchain. These are candidate
+  read tools that map 1:1 to Cosmos gRPC-gateway REST queries exposed at
+  https://api.provenance.io.
+server:
+  name: provenance
+  transport: http
+  url: null
+tools:
+- name: get_marker
+  description: Query a marker (token) account by denom or address.
+  source_operation: grpc/provenance-marker-query.proto#Marker
+- name: list_markers
+  description: List all markers on the chain.
+  source_operation: grpc/provenance-marker-query.proto#AllMarkers
+- name: get_marker_supply
+  description: Query total supply for a marker denom.
+  source_operation: grpc/provenance-marker-query.proto#Supply
+- name: get_scope
+  description: Query a metadata scope (asset record) by id.
+  source_operation: grpc/provenance-metadata-query.proto#Scope
+- name: list_scopes
+  description: List all metadata scopes.
+  source_operation: grpc/provenance-metadata-query.proto#ScopesAll
+- name: get_scope_records
+  description: List records within a metadata scope.
+  source_operation: grpc/provenance-metadata-query.proto#Records
+- name: resolve_name
+  description: Resolve a Provenance name to its owning address.
+  source_operation: grpc/provenance-name-query.proto#Resolve
+- name: reverse_lookup_name
+  description: Reverse-lookup the names owned by an address.
+  source_operation: grpc/provenance-name-query.proto#ReverseLookup
+- name: get_attribute
+  description: Query attributes on an account.
+  source_operation: grpc/provenance-attribute-query.proto#Attribute
+- name: get_market
+  description: Query an on-chain exchange market by id.
+  source_operation: grpc/provenance-exchange-query.proto#GetMarket
+- name: list_market_orders
+  description: List orders for an exchange market.
+  source_operation: grpc/provenance-exchange-query.proto#GetMarketOrders
+- name: get_order
+  description: Query a single exchange order by id.
+  source_operation: grpc/provenance-exchange-query.proto#GetOrder
+- name: get_ledger
+  description: Query a ledger by id.
+  source_operation: grpc/provenance-ledger-query.proto#Ledger
+- name: list_ledger_entries
+  description: List entries within a ledger.
+  source_operation: grpc/provenance-ledger-query.proto#LedgerEntries

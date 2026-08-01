@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/provenance-io/provenance/releases
+versioning:
+  scheme: semver
+  current: v1.29.0
+  module_versioning: uri-path (module protos versioned as v1 / v1beta1)
+  docs: https://docs.provenance.io/
+release_cadence: >-
+  Tagged GitHub releases with release-candidate (-rcN) pre-releases ahead of each
+  mainnet software version; roughly monthly minor releases.
+status_page: https://explorer.provenance.io
+status_page_note: >-
+  Provenance does not publish a dedicated status page; the public block explorer
+  (explorer.provenance.io) is the live network-health surface (block height, validators,
+  uptime). Public RPC/REST/gRPC endpoints are also listed in the Cosmos chain-registry.
+deprecation:
+  policy_url: null
+  note: >-
+    Chain upgrades are governed on-chain (Cosmos governance) and coordinated via the
+    provenance-io/mainnet network-config repo; no separate HTTP Sunset/Deprecation header
+    policy is published for the REST gateway.
+deprecated_operations: []

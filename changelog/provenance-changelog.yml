@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/provenance-io/provenance/releases
+scheme: semver
+current_version: v1.29.0
+note: >-
+  Provenance publishes dated, tagged GitHub releases for the blockchain node software,
+  each with release-candidate pre-releases. Recent stable releases below (release-candidate
+  tags omitted). Full CHANGELOG.md ships in the repo root.
+entries:
+- version: v1.29.0
+  date: '2026-06-08'
+  prerelease: false
+- version: v1.28.0
+  date: '2026-05-01'
+  prerelease: false
+- version: v1.27.2
+  date: '2026-01-23'
+  prerelease: false
