@@ -55,7 +55,7 @@ image: https://avatars.githubusercontent.com/provenance-io
 tags:
 - Company
 - Blockchain
-- Financial-Services
+- Financial Services
 - Tokenization
 - Real World Assets
 - Cosmos SDK
@@ -74,6 +74,7 @@ tags_raw:
 - Web3
 - DeFi
 - Digital Assets
+- Financial-Services
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
